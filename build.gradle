@@ -7,7 +7,7 @@ plugins {
 	id 'maven-publish'
 }
 
-group = 'org.koitharu'
+group = 'org.example'
 version = '1.0'
 
 test {
@@ -20,7 +20,7 @@ compileKotlin {
 			'-opt-in=kotlin.RequiresOptIn',
 			'-opt-in=kotlin.contracts.ExperimentalContracts',
 			'-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
-			'-opt-in=org.koitharu.kotatsu.parsers.InternalParsersApi',
+			'-opt-in=org.example.dexreader.parsers.InternalParsersApi',
 		]
 	}
 }
@@ -30,7 +30,7 @@ compileTestKotlin {
 		freeCompilerArgs += [
 			'-opt-in=kotlin.RequiresOptIn',
 			'-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
-			'-opt-in=org.koitharu.kotatsu.parsers.InternalParsersApi',
+			'-opt-in=org.example.dexreader.parsers.InternalParsersApi',
 		]
 	}
 }
@@ -60,7 +60,7 @@ dependencies {
 	implementation 'org.json:json:20231013'
 	implementation 'androidx.collection:collection:1.4.0'
 
-	ksp project(':kotatsu-parsers-ksp')
+	ksp project(':parsers-ksp')
 
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
 	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
